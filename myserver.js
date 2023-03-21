@@ -63,13 +63,9 @@ app.post("/myserver", async function (req, res) {
     try {
       let body = data;
       console.log(body);
-      let response = await axios.post(
-        fetchUrl,
-        {
-          headers: headers,
-        },
-        body
-      );
+      let response = await axios.post(fetchUrl, body, {
+        headers: headers,
+      });
       console.log("resp Post", response.data);
       res.send(response.data);
     } catch (error) {
@@ -84,13 +80,9 @@ app.post("/myserver", async function (req, res) {
     try {
       let body = data;
       console.log(body);
-      let response = await axios.put(
-        fetchUrl,
-        {
-          headers: headers,
-        },
-        body
-      );
+      let response = await axios.put(fetchUrl, body, {
+        headers: headers,
+      });
       console.log("resp", response.data);
       res.send(response.data);
     } catch (error) {
